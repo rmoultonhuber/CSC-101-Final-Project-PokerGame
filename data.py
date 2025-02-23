@@ -30,7 +30,6 @@ class Card:
 
 deck = [Card(suit, str(rank)) for rank in list(range(2,11)) + ["Jack", "Queen", "King", "Ace"] for suit in ["Spades", "Clubs", "Hearts", "Diamonds"]]
 
-
 def shuffle(list):
         random.shuffle(deck)
         return deck

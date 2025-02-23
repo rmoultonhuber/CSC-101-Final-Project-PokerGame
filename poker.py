@@ -59,11 +59,3 @@ print(hand_type(hand))
 
 
 
-def win_or_lose():
-    bet = 500
-    high_score = 0
-    placed = input("Place your bet:")
-    float(placed)
-    try:
-        if placed <= bet:
-
