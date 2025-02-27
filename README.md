@@ -1,4 +1,4 @@
-CSC-101 Final Project:High Score Poker
-Jeremy Lopanec, Ruben Moulton Huber
+#CSC-101 Final Project:High Score Poker
+#Jeremy Lopanec, Ruben Moulton Huber
 
 
