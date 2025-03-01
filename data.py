@@ -33,6 +33,7 @@ deck = [Card(suit, str(rank)) for rank in list(range(2,11)) + ["Jack", "Queen", 
 
 def shuffle(list):
         random.shuffle(deck)
+        print("Deck Shuffled")
         return deck
 
 
