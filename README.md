@@ -1,4 +1,4 @@
-## <span style="color:tan"> CSC 101 Final Project: High Score Poker Game
+## <span style="color:tan"> CSC 101 Final Project W2025: High Score Poker Game
 ### Jeremy Lopanec, Ruben Moulton Huber
 
 ### <span style="color:tan"> Purpose 
@@ -17,7 +17,10 @@ We will utilize Classes, Lists, Dictionaries, Strings, and Control Structures in
 
     Dictionary: Rank Order - This dictionary contains the value of the ranks.
 
-    Dictionary: Hand Order - THis dictionary contains the values of the types of hand.
+    Dictionary: Hand Order - This dictionary contains the values of the types of hand.
+
+    List: Deck - This list hold the 52 cards of a traditional deck in a randomly suffled order. 
+
 
 ### <span style="color:tan"> <ins> Credits and Distribution
     Repository Setup - Ruben 
