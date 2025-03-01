@@ -13,28 +13,30 @@ long you can continuously win or lose before you exceed your personal high score
 ### <span style="color:tan"> Data Structures To Be Used
 We will utilize Classes, Lists, Dictionaries, Strings, and Control Structures in the project.
 
-Class: Card - Will set up object 'Card' that contains a suit and a rank. 
+    Class: Card - Will set up object 'Card' that contains a suit and a rank. 
 
-Dictionary: Rank Order - This dictionary contains the value of the ranks 
+    Dictionary: Rank Order - This dictionary contains the value of the ranks.
+
+    Dictionary: Hand Order - THis dictionary contains the values of the types of hand.
 
 ### <span style="color:tan"> <ins> Credits and Distribution
-Repository Setup - Ruben 
+    Repository Setup - Ruben 
 
-Class Initialization - Jeremy
+    Class Initialization - Jeremy
 
-Deal Hand Function - Jeremy / Ruben
+    Deal Hand Function - Jeremy / Ruben
 
-Compare Hands Function - Jeremy
+    Compare Hands Function - Jeremy
 
-Main Game Implementation - Jeremy
+    Main Game Implementation - Jeremy
 
-Bet Function - Ruben
+    Bet Function - Ruben
 
-Data Test Cases - Jeremy
+    Data Test Cases - Jeremy
 
-Poker Game Test Cases - Ruben
+    Poker Game Test Cases - Ruben
 
-Markdown - Ruben
+    Markdown - Ruben
 
 
 
