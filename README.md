@@ -46,7 +46,9 @@ We will utilize Classes, Lists, Dictionaries, Strings, and Control Structures in
 
     Compare Hands Function - Jeremy
 
-    Main Game Implementation - Jeremy
+    Main Game Initialization - Jeremy
+
+    Main Game Implementation - Ruben
 
     Bet Function - Ruben
 

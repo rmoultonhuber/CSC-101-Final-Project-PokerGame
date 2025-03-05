@@ -161,7 +161,7 @@ def game_start():
 
 
     print("You Have Lost All Your Chips.")
-    print("Thanks For Playing! Your High Score Was: ", high_score)
+    print("Thanks For Playing! Your High Score Was:", high_score)
     print("High Score Poker v0.3")
     print("Developed by Jeremy Lopanec, and Ruben Moulton Huber")
 
