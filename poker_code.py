@@ -1,12 +1,13 @@
 from operator import truediv
+from sys import exc_info
+
+import data
 from data import Card
 from data import deck
 from data import shuffle
 from data import rank_order
 
-shuffled_deck = shuffle(deck)
-hand = shuffled_deck[:5]
-deal_hand = shuffled_deck[5:10]
+
 
 hand_value = {f'High Card':1, 'Pair':2, 'Two Pair':3, 'Three of a Kind':4, 'Straight':5, 'Flush':6, 'Full House':7,
               'Four of a Kind':8, 'Straight Flush':9, 'Royal Flush':10}
@@ -62,21 +63,21 @@ def hand_type(hand:list[Card]):
     return "Unknown hand"
 
 
-def dealer_hand():
-    return f"Dealer Hand is: {hand_type(deal_hand)}"
+def dealer_hand(hand:list[data.Card]):
+    return f"Dealer Hand is: {hand_type(hand)}"
 
-def your_hand():
+def your_hand(hand:list[data.Card]):
     return f"Your Hand is: {hand_type(hand)}"
 
-def get_hand_value():
+def get_hand_value(hand:list[data.Card]):
     return hand_value[hand_type(hand)]
 
-def get_dealer_hand_value():
-    return hand_value[hand_type(deal_hand)]
+def get_dealer_hand_value(hand:list[data.Card]):
+    return hand_value[hand_type(hand)]
 
-def win_or_lose():
-    your_hand_value = get_hand_value()
-    dealer_hand_value = get_dealer_hand_value()
+def win_or_lose(player:list[data.Card],dealer:list[data.Card]):
+    your_hand_value = get_hand_value(player)
+    dealer_hand_value = get_dealer_hand_value(dealer)
 
     if dealer_hand_value > your_hand_value:
         return "You Lose"
@@ -86,8 +87,8 @@ def win_or_lose():
 
     else:
         print("It's a Draw, Performing Tie Breaker")
-        your_hand_value = sort_ranks(hand)
-        dealer_hand_value = sort_ranks(deal_hand)
+        your_hand_value = sort_ranks(player)
+        dealer_hand_value = sort_ranks(dealer)
         y_card = your_hand_value[0]
         d_card = dealer_hand_value[0]
         if y_card.rank > d_card.rank:
@@ -97,11 +98,78 @@ def win_or_lose():
         return "True Tie"
 
 
+def betting(total:int, bet:int):
+    if bet > total:
+        print("You cannot bet more chips than you have.")
+        return 0
+    elif bet == total:
+        print("Betting all in with:", bet, "chips")
+        return bet
+    else:
+        print("Betting:", bet, "chips")
+        return bet
 
 
-print(your_hand())
-print(dealer_hand())
-print(win_or_lose())
+def play_game(chips:int) -> int:
+    shuffled_deck = shuffle(deck)
+    winnings = 0
+
+    player = shuffled_deck[:5]
+    print("Your Hand is :", player)
+
+    dealer = shuffled_deck[5:10]
+    bet = betting(chips, int(input("How Many Chips Would You Like To Bet?: ")))
+
+    print(your_hand(player))
+    print(dealer_hand(dealer))
+    win_or_lose(player,dealer)
+
+    if win_or_lose(player,dealer) == "True Tie":
+        winnings = 0
+        print("Returning Bet")
+    elif win_or_lose(player,dealer) == "You Win":
+        winnings = winnings + bet
+        print("Congrats, you won ", winnings, "chips.")
+    elif win_or_lose(player, dealer) == "You Lose":
+        winnings = winnings - bet
+        print("You Lost ", abs(winnings), "chips.")
+    else:
+        print("An Error Occurred, Returning Bet")
+        winnings = 0
+
+    return winnings
+
+
+def game_start():
+
+    print("Welcome to High Score Poker")
+    chips = 500
+    print("You have", chips, "chips.")
+    high_score = 0
+
+    while chips > 0:
+        winnings = play_game(chips)
+        chips += winnings
+
+        if chips > 500 and high_score == 0:
+            high_score = chips
+        elif chips > high_score:
+            high_score = chips
+        else:
+            high_score = high_score
+        print("You have", chips, "chips.")
+
+
+    print("You Have Lost All Your Chips.")
+    print("Thanks For Playing! Your High Score Was: ", high_score)
+    print("High Score Poker v0.3")
+    print("Developed by Jeremy Lopanec, and Ruben Moulton Huber")
+
+
+
+game_start()
+
+
 
 
 
