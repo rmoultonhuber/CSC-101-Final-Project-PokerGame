@@ -31,3 +31,4 @@ class TestPoker(TestCase):
         result = dealer_hand(inpt)
         self.assertEqual(expected,result)
 
+

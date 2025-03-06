@@ -31,3 +31,4 @@ class TestCard(TestCase):
         card = data.Card("Hearts", "9")
         self.assertNotEqual("4 of Clubs", repr(card))
 
+
