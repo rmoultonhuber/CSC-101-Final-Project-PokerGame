@@ -17,13 +17,13 @@ Below is a written description of all the included project files.
 
     data.py - This is the file which holds the class data for the 'Card' class and initalizes the deck of 'Card' objects.
 
-    data_tests - This file contains the necessary tests to ensure functionallity of the 'Card' class
+    data_tests - .pyThis file contains the necessary tests to ensure functionallity of the 'Card' class
 
-    play_poker - This is the 'driver file' where the game will be executed.
+    play_poker.py - This is the 'driver file' where the game will be executed.
 
-    poker_code - This file contains all the background functions of the poker game. These functions allow the player to recieve a deck of cards and make a bet against the dealer.
+    poker_code.py - This file contains all the background functions of the poker game. These functions allow the player to recieve a deck of cards and make a bet against the dealer.
 
-    poker_tests - This file contains the necessary tests to ensure functionality of the poker game. Tests verfify the length of the hand, the comparing betwen hands, and the betting process.
+    poker_tests.py - This file contains the necessary tests to ensure functionality of the poker game. Tests verfify the length of the hand, the comparing betwen hands, and the betting process.
 
 ### <span style="color:tan"> Data Structures To Be Used
 We will utilize Classes, Lists, Dictionaries, Strings, and Control Structures in the project.
@@ -36,27 +36,76 @@ We will utilize Classes, Lists, Dictionaries, Strings, and Control Structures in
 
     List: Deck - This list hold the 52 cards of a traditional deck in a randomly suffled order. 
 
+### <span style="color:tan"> Function Descriptions
+
+    shuffle - Shuffles a deck of 52 cards. Input = deck, Output = deck
+    
+    sort_ranks - Sorts a hand of five cards in order of descending rank. Input = list of Cards, Output = list of Cards
+
+    hand_type - Determines the highest type of the hand of the input hand. Input = list of Cards, Output = string
+
+    dealer_hand - Determines the type of hand held by the dealer. Input = list of Cards, Output = string
+
+    your_hand - Determines the type of hand held by the player. Input = list of Cards, Output = string
+
+    get_hand_value - Determines the hand value held by the player by finding its type in a dictionary of hand values. Input = list of Cards, Output = int
+
+    get_dealer_hand_value - Determines the hand value held by the dealer by finding its type in a dictionary of hand values. Input = list of Cards, Output = int
+
+    win_or_lose - Compares the hand values of the dealer and the player and determines who wins the round.  Input = Two lists of Cards, Output = string
+
+    betting - Determines if the bet is a valid amount that the player has. Will display a special message if the bet is all in. Input = two ints, output = int
+
+    play_game - The main game function, call necesaary functions to determine who wins the round. If player wins, awards the player with double the bet, if the dealer wins the player loses the bet, if there is a tie, returns the bet to the player. Input = int, output = int
+
+    game_start - The main game controller. THis functions initializes the game and calls the play_game function until the player runs out of chips. When the player is out, it displays the high score for the game.
+
+    
+
 
 ### <span style="color:tan"> <ins> Credits and Distribution
-    Repository Setup - Ruben 
-
-    Class Initialization - Jeremy
-
-    Deal Hand Function - Jeremy / Ruben
-
-    Compare Hands Function - Jeremy
+    Repository Setup and File Creation - Ruben
 
     Main Game Initialization - Jeremy
 
     Main Game Implementation - Ruben
 
-    Bet Function - Ruben
-
     Data Test Cases - Jeremy
 
     Poker Game Test Cases - Ruben
 
-    Markdown - Ruben
+    Markdown - Ruben / Jeremy 
+
+    
+
+    Class Card intialization - Created by Jeremy
+
+    shuffle function - Created by Jeremy, modified by Ruben
+
+    sort_ranks - Created by Jeremy
+
+    hand_type - Created by Jeremy
+
+    dealer_hand - Created by Jeremy
+
+    get_hand_value - Created by Jeremy, modified by Ruben
+
+    get_dealer_hand_value - Created by Jeremy, modified by Ruben
+
+    win_or_lose - Created by Jeremy, modified by Ruben
+
+    betting - Created by Ruben
+
+    play_game - Created by Ruben
+
+    game_start - Created by Ruben
+
+
+    
+
+
+
+    
 
 
 
