@@ -1,5 +1,5 @@
-print("--------------------------WELCOME TO POKER--------------------------")
-print("      \n\n\n                        Enter 'Start' to play")
+import poker_code
+from poker_code import game_start
 
-print("\n \n \n--------------------------WELCOME TO POKER--------------------------")
-bet = 500
+print("-----------------------------------------------------------")
+game_start()

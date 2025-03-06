@@ -94,7 +94,7 @@ def win_or_lose(player:list[data.Card],dealer:list[data.Card]):
         if y_card.rank > d_card.rank:
             return "You Win"
         elif d_card.get_rank() > y_card.get_rank():
-            return "You Lose"
+             return "You Lose"
         return "True Tie"
 
 
@@ -115,10 +115,11 @@ def play_game(chips:int) -> int:
     winnings = 0
 
     player = shuffled_deck[:5]
-    print("Your Hand is :", player)
+    print("Your Hand is :", sort_ranks(player))
 
     dealer = shuffled_deck[5:10]
     bet = betting(chips, int(input("How Many Chips Would You Like To Bet?: ")))
+    print("-----------------------------------------------------------")
 
     print(your_hand(player))
     print(dealer_hand(dealer))
@@ -140,12 +141,14 @@ def play_game(chips:int) -> int:
     return winnings
 
 
+
 def game_start():
 
     print("Welcome to High Score Poker")
     chips = 500
     print("You have", chips, "chips.")
     high_score = 0
+
 
     while chips > 0:
         winnings = play_game(chips)
@@ -158,6 +161,8 @@ def game_start():
         else:
             high_score = high_score
         print("You have", chips, "chips.")
+        print("-----------------------------------------------------------")
+
 
 
     print("You Have Lost All Your Chips.")
@@ -167,7 +172,7 @@ def game_start():
 
 
 
-game_start()
+
 
 
 
