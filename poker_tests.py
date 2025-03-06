@@ -6,7 +6,7 @@ from data import shuffle
 from poker_code import your_hand, dealer_hand
 
 shuffled_deck = shuffle(data.deck)
-print(shuffled_deck[:5])
+
 class TestPoker(TestCase):
 
     def test_deal_hand1(self):
