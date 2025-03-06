@@ -52,13 +52,13 @@ We will utilize Classes, Lists, Dictionaries, Strings, and Control Structures in
 
     get_dealer_hand_value - Determines the hand value held by the dealer by finding its type in a dictionary of hand values. Input = list of Cards, Output = int
 
-    win_or_lose - 
+    win_or_lose - Compares the hand values of the dealer and the player and determines who wins the round.  Input = Two lists of Cards, Output = string
 
-    betting - 
+    betting - Determines if the bet is a valid amount that the player has. Will display a special message if the bet is all in. Input = two ints, output = int
 
-    play game - 
+    play_game - The main game function, call necesaary functions to determine who wins the round. If player wins, awards the player with double the bet, if the dealer wins the player loses the bet, if there is a tie, returns the bet to the player. Input = int, output = int
 
-    game_statrt - 
+    game_start - The main game controller. THis functions initializes the game and calls the play_game function until the player runs out of chips. When the player is out, it displays the high score for the game.
 
     
 
