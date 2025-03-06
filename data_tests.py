@@ -1,6 +1,8 @@
 from unittest import TestCase
 import data
 
+
+
 class TestCard(TestCase):
 
     def test_Card_init(self):
