@@ -36,6 +36,32 @@ We will utilize Classes, Lists, Dictionaries, Strings, and Control Structures in
 
     List: Deck - This list hold the 52 cards of a traditional deck in a randomly suffled order. 
 
+### <span style="color:tan"> Function Descriptions
+
+    shuffle - Shuffles a deck of 52 cards. Input = deck, Output = deck
+    
+    sort_ranks - Sorts a hand of five cards in order of descending rank. Input = list of Cards, Output = list of Cards
+
+    hand_type - Determines the highest type of the hand of the input hand. Input = list of Cards, Output = string
+
+    dealer_hand - Determines the type of hand held by the dealer. Input = list of Cards, Output = string
+
+    your_hand - Determines the type of hand held by the player. Input = list of Cards, Output = string
+
+    get_hand_value - Determines the hand value held by the player by finding its type in a dictionary of hand values. Input = list of Cards, Output = int
+
+    get_dealer_hand_value - Determines the hand value held by the dealer by finding its type in a dictionary of hand values. Input = list of Cards, Output = int
+
+    win_or_lose - 
+
+    betting - 
+
+    play game - 
+
+    game_statrt - 
+
+    
+
 
 ### <span style="color:tan"> <ins> Credits and Distribution
     Repository Setup - Ruben 
