@@ -17,13 +17,13 @@ Below is a written description of all the included project files.
 
     data.py - This is the file which holds the class data for the 'Card' class and initalizes the deck of 'Card' objects.
 
-    data_tests - This file contains the necessary tests to ensure functionallity of the 'Card' class
+    data_tests - .pyThis file contains the necessary tests to ensure functionallity of the 'Card' class
 
-    play_poker - This is the 'driver file' where the game will be executed.
+    play_poker.py - This is the 'driver file' where the game will be executed.
 
-    poker_code - This file contains all the background functions of the poker game. These functions allow the player to recieve a deck of cards and make a bet against the dealer.
+    poker_code.py - This file contains all the background functions of the poker game. These functions allow the player to recieve a deck of cards and make a bet against the dealer.
 
-    poker_tests - This file contains the necessary tests to ensure functionality of the poker game. Tests verfify the length of the hand, the comparing betwen hands, and the betting process.
+    poker_tests.py - This file contains the necessary tests to ensure functionality of the poker game. Tests verfify the length of the hand, the comparing betwen hands, and the betting process.
 
 ### <span style="color:tan"> Data Structures To Be Used
 We will utilize Classes, Lists, Dictionaries, Strings, and Control Structures in the project.
@@ -64,25 +64,48 @@ We will utilize Classes, Lists, Dictionaries, Strings, and Control Structures in
 
 
 ### <span style="color:tan"> <ins> Credits and Distribution
-    Repository Setup - Ruben 
-
-    Class Initialization - Jeremy
-
-    Deal Hand Function - Jeremy / Ruben
-
-    Compare Hands Function - Jeremy
+    Repository Setup and File Creation - Ruben
 
     Main Game Initialization - Jeremy
 
     Main Game Implementation - Ruben
 
-    Bet Function - Ruben
-
     Data Test Cases - Jeremy
 
     Poker Game Test Cases - Ruben
 
-    Markdown - Ruben
+    Markdown - Ruben / Jeremy 
+
+    
+
+    Class Card intialization - Created by Jeremy
+
+    shuffle function - Created by Jeremy, modified by Ruben
+
+    sort_ranks - Created by Jeremy
+
+    hand_type - Created by Jeremy
+
+    dealer_hand - Created by Jeremy
+
+    get_hand_value - Created by Jeremy, modified by Ruben
+
+    get_dealer_hand_value - Created by Jeremy, modified by Ruben
+
+    win_or_lose - Created by Jeremy, modified by Ruben
+
+    betting - Created by Ruben
+
+    play_game - Created by Ruben
+
+    game_start - Created by Ruben
+
+
+    
+
+
+
+    
 
 
 
