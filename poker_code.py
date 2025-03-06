@@ -86,16 +86,17 @@ def win_or_lose(player:list[data.Card],dealer:list[data.Card]):
         return "You Win"
 
     else:
-        print("It's a Draw, Performing Tie Breaker")
         your_hand_value = sort_ranks(player)
         dealer_hand_value = sort_ranks(dealer)
         y_card = your_hand_value[0]
         d_card = dealer_hand_value[0]
-        if y_card.rank > d_card.rank:
-            return "You Win"
+        if y_card.get_rank() > d_card.get_rank():
+            return "You Win By Tie Break"
         elif d_card.get_rank() > y_card.get_rank():
-             return "You Lose"
-        return "True Tie"
+
+            return "You Lose By Tie Break"
+        else:
+            return "True Tie"
 
 
 def betting(total:int, bet:int):
@@ -120,25 +121,34 @@ def play_game(chips:int) -> int:
     dealer = shuffled_deck[5:10]
     bet = betting(chips, int(input("How Many Chips Would You Like To Bet?: ")))
     print("-----------------------------------------------------------")
-
     print(your_hand(player))
     print(dealer_hand(dealer))
     win_or_lose(player,dealer)
 
+
     if win_or_lose(player,dealer) == "True Tie":
         winnings = 0
         print("Returning Bet")
-    elif win_or_lose(player,dealer) == "You Win":
+    elif win_or_lose(player,dealer) == "You Win" or win_or_lose(player, dealer) == "You Win By Tie Break":
         winnings = winnings + bet
+        print("Congrats, you won ", winnings, "chips.")
+    elif win_or_lose(player, dealer) == "You Win By Tie Break":
+        winnings = winnings + bet
+        print("Won by Tie Break")
         print("Congrats, you won ", winnings, "chips.")
     elif win_or_lose(player, dealer) == "You Lose":
         winnings = winnings - bet
+        print("You Lost ", abs(winnings), "chips.")
+    elif win_or_lose(player, dealer) == "You Lose By Tie Break":
+        winnings = winnings - bet
+        print("Lost by Tie Break")
         print("You Lost ", abs(winnings), "chips.")
     else:
         print("An Error Occurred, Returning Bet")
         winnings = 0
 
     return winnings
+
 
 
 
