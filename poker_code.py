@@ -13,11 +13,17 @@ hand_value = {f'High Card':1, 'Pair':2, 'Two Pair':3, 'Three of a Kind':4, 'Stra
               'Four of a Kind':8, 'Straight Flush':9, 'Royal Flush':10}
 
 
-
+# Sorts a hand of five cards in order of descending rank.
+# Input = list of Cards, Output = list of Cards
+# Created by Jeremy
 def sort_ranks(hand:list[Card]):
     hand.sort(key=lambda card: card.get_rank(), reverse=True)
     return hand
 
+
+# Determines the highest type of the hand of the input hand.
+# Input = list of Cards, Output = string
+# Created by Jeremy
 def hand_type(hand:list[Card]):
     hand = sort_ranks(hand)
     #figures out if the len of the amount of suits in set are only 1 or not
@@ -49,7 +55,6 @@ def hand_type(hand:list[Card]):
             return "High Card"
 
 
-
     if sorted_rank_counts == [4, 1]:
         return "Four of a Kind"
     if sorted_rank_counts == [3, 2]:
@@ -63,18 +68,32 @@ def hand_type(hand:list[Card]):
     return "Unknown hand"
 
 
+# Determines the type of hand held by the dealer.
+# Input = list of Cards, Output = string
+# Created by Jeremy, modified by Ruben
 def dealer_hand(hand:list[data.Card]):
     return f"Dealer Hand is: {hand_type(hand)}"
 
+# Determines the type of hand held by the player.
+# Input = list of Cards, Output = string
+# Created by Jeremy, modified by Ruben
 def your_hand(hand:list[data.Card]):
     return f"Your Hand is: {hand_type(hand)}"
 
+# Determines the hand value held by the player by finding its type in a dictionary of hand values.
+# Input = list of Cards, Output = int
+# Created by Jeremy, modified by Ruben
 def get_hand_value(hand:list[data.Card]):
     return hand_value[hand_type(hand)]
+
 
 def get_dealer_hand_value(hand:list[data.Card]):
     return hand_value[hand_type(hand)]
 
+
+# Compares the hand values of the dealer and the player and determines who wins the round.
+# Input = Two lists of Cards, Output = string
+# Created by Jeremy, modified by Ruben
 def win_or_lose(player:list[data.Card],dealer:list[data.Card]):
     your_hand_value = get_hand_value(player)
     dealer_hand_value = get_dealer_hand_value(dealer)
@@ -99,6 +118,9 @@ def win_or_lose(player:list[data.Card],dealer:list[data.Card]):
             return "True Tie"
 
 
+# Determines if the bet is a valid amount that the player has. Will display a special message if the bet is all in.
+# Input = two ints, output = int
+# Created by Ruben
 def betting(total:int, bet:int):
     if bet > total:
         print("You cannot bet more chips than you have.")
@@ -111,6 +133,11 @@ def betting(total:int, bet:int):
         return bet
 
 
+# The main game function, call necessary functions to determine who wins the round.
+# If player wins, awards the player with double the bet, if the dealer wins the player loses the bet,
+# if there is a tie, returns the bet to the player.
+# Input = int, output = int
+# Created by Ruben, modified by Jeremy
 def play_game(chips:int) -> int:
     shuffled_deck = shuffle(deck)
     winnings = 0
@@ -151,7 +178,9 @@ def play_game(chips:int) -> int:
 
 
 
-
+#The main game controller. THis functions initializes the game and calls the play_game function until the player runs out of chips.
+# When the player is out, it displays the high score for the game.
+# Created by Ruben, modified by Jeremy
 def game_start():
 
     print("Welcome to High Score Poker")

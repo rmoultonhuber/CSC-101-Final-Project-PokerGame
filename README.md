@@ -56,7 +56,7 @@ We will utilize Classes, Lists, Dictionaries, Strings, and Control Structures in
 
     betting - Determines if the bet is a valid amount that the player has. Will display a special message if the bet is all in. Input = two ints, output = int
 
-    play_game - The main game function, call necesaary functions to determine who wins the round. If player wins, awards the player with double the bet, if the dealer wins the player loses the bet, if there is a tie, returns the bet to the player. Input = int, output = int
+    play_game - The main game function, calls necesaary functions to determine who wins the round. If player wins, awards the player with double the bet, if the dealer wins the player loses the bet, if there is a tie, returns the bet to the player. Input = int, output = int
 
     game_start - The main game controller. THis functions initializes the game and calls the play_game function until the player runs out of chips. When the player is out, it displays the high score for the game.
 
@@ -88,7 +88,9 @@ We will utilize Classes, Lists, Dictionaries, Strings, and Control Structures in
 
     hand_type - Created by Jeremy
 
-    dealer_hand - Created by Jeremy
+    dealer_hand - Created by Jeremy, modified by Ruben
+
+    your_hand - Created by Jeremy, modified by Ruben
 
     get_hand_value - Created by Jeremy, modified by Ruben
 
@@ -96,9 +98,9 @@ We will utilize Classes, Lists, Dictionaries, Strings, and Control Structures in
 
     win_or_lose - Created by Jeremy, modified by Ruben
 
-    betting - Created by Ruben
+    betting - Created by Ruben, modified by Jeremy
 
-    play_game - Created by Ruben
+    play_game - Created by Ruben, modified by Jeremy
 
     game_start - Created by Ruben
 
