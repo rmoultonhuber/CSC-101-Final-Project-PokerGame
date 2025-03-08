@@ -17,7 +17,7 @@ Below is a written description of all the included project files.
 
     data.py - This is the file which holds the class data for the 'Card' class and initalizes the deck of 'Card' objects.
 
-    data_tests - .pyThis file contains the necessary tests to ensure functionallity of the 'Card' class
+    data_tests.py - This file contains the necessary tests to ensure functionallity of the 'Card' class
 
     play_poker.py - This is the 'driver file' where the game will be executed.
 

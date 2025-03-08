@@ -93,6 +93,7 @@ def win_or_lose(player:list[data.Card],dealer:list[data.Card]):
         if y_card.get_rank() > d_card.get_rank():
             return "You Win By Tie Break"
         elif d_card.get_rank() > y_card.get_rank():
+
             return "You Lose By Tie Break"
         else:
             return "True Tie"
@@ -127,9 +128,8 @@ def play_game(chips:int) -> int:
 
     if win_or_lose(player,dealer) == "True Tie":
         winnings = 0
-        print("It's a Tie")
         print("Returning Bet")
-    elif win_or_lose(player,dealer) == "You Win":
+    elif win_or_lose(player,dealer) == "You Win" or win_or_lose(player, dealer) == "You Win By Tie Break":
         winnings = winnings + bet
         print("Congrats, you won ", winnings, "chips.")
     elif win_or_lose(player, dealer) == "You Win By Tie Break":
@@ -177,7 +177,7 @@ def game_start():
 
     print("You Have Lost All Your Chips.")
     print("Thanks For Playing! Your High Score Was:", high_score)
-    print("High Score Poker v0.4")
+    print("High Score Poker v0.3")
     print("Developed by Jeremy Lopanec, and Ruben Moulton Huber")
 
 
