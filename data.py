@@ -2,6 +2,7 @@ rank_order = {'2':2, '3':3, '4':4, '5':5, '6':6, '7':7, '8':8, '9':9, '10':10, "
 
 import random
 
+# Class initialization for the game.
 class Card:
 
     def __init__(self, suit, rank):
@@ -9,13 +10,15 @@ class Card:
         self.rank = rank
 
 
-
+    # Creates the string representation of the Card objects
     def __repr__(self):
         return "{} of {}".format(self.rank, self.suit)
 
+    # Creates string to describe card object when printing a Card.
     def __str__(self):
         return "{} of {}".format(self.rank, self.suit)
 
+    # Allows comparison between cards
     def __eq__(self, other):
         return (other is self or
                 type(other) == Card and
