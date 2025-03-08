@@ -3,6 +3,7 @@ rank_order = {'2':2, '3':3, '4':4, '5':5, '6':6, '7':7, '8':8, '9':9, '10':10, "
 import random
 
 # Class initialization for the game.
+# Created by Jeremy
 class Card:
 
     def __init__(self, suit, rank):
@@ -40,6 +41,7 @@ deck = [Card(suit, str(rank)) for rank in list(range(2,11)) + ["Jack", "Queen", 
 
 # Shuffles a deck of 52 cards randomly.
 # Input = deck, Output = deck
+# Created by Jeremy, modified by Ruben
 def shuffle(list):
         random.shuffle(deck)
         print("Deck Shuffled")

@@ -76,6 +76,8 @@ We will utilize Classes, Lists, Dictionaries, Strings, and Control Structures in
 
     Markdown - Ruben / Jeremy 
 
+    Function Commenting - Ruben
+
     
 
     Class Card intialization - Created by Jeremy
