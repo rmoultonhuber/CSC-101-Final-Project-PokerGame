@@ -129,7 +129,7 @@ def play_game(chips:int) -> int:
     if win_or_lose(player,dealer) == "True Tie":
         winnings = 0
         print("Returning Bet")
-    elif win_or_lose(player,dealer) == "You Win" or win_or_lose(player, dealer) == "You Win By Tie Break":
+    elif win_or_lose(player,dealer) == "You Win":
         winnings = winnings + bet
         print("Congrats, you won ", winnings, "chips.")
     elif win_or_lose(player, dealer) == "You Win By Tie Break":
