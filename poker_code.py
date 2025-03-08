@@ -178,7 +178,7 @@ def play_game(chips:int) -> int:
 
 
 
-#The main game controller. THis functions initializes the game and calls the play_game function until the player runs out of chips.
+# The main game controller. THis functions initializes the game and calls the play_game function until the player runs out of chips.
 # When the player is out, it displays the high score for the game.
 # Created by Ruben, modified by Jeremy
 def game_start():
