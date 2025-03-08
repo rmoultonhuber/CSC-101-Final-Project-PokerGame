@@ -10,6 +10,12 @@ are working as intended.
 This project is Poker game where you can bet your points starting at 500 and see how 
 long you can continuously win or lose before you exceed your personal high score or lose with 0 points.
 
+### <span style="color:tan"> How To Play
+- Run play_poker.py
+- Look at your hand and consider the likelihood that yours would beat the dealer
+- When Prompted in the console enter a positive number for the bet
+- Repeat until you run out of chips!
+
 ### <span style="color:tan"> Project Files
 Below is a written description of all the included project files.
 
