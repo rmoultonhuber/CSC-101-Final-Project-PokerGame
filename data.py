@@ -22,15 +22,21 @@ class Card:
                 self.suit == other.suit and
                 self.rank == other.rank)
 
+    # Allows poker.py to be able to get the rank of the Card.
+    # Input = Card, Output = rank
     def get_rank(self):
         return rank_order[self.rank]
 
+    # Allows poker.py to be able to get the rank of the Card.
+    # Input = Card, Output = suit
     def get_suit(self):
         return self.suit
 
 
 deck = [Card(suit, str(rank)) for rank in list(range(2,11)) + ["Jack", "Queen", "King", "Ace"] for suit in ["Spades", "Clubs", "Hearts", "Diamonds"]]
 
+# Shuffles a deck of 52 cards randomly.
+# Input = deck, Output = deck
 def shuffle(list):
         random.shuffle(deck)
         print("Deck Shuffled")
