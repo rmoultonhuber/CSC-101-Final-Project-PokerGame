@@ -65,7 +65,7 @@ def hand_type(hand:list[Card]):
         return "Two Pair"
     if sorted_rank_counts == [2, 1, 1, 1]:
         return "Pair"
-    return "Unknown hand"
+    return "Unknown Hand"
 
 
 # Determines the type of hand held by the dealer.
@@ -86,17 +86,12 @@ def your_hand(hand:list[data.Card]):
 def get_hand_value(hand:list[data.Card]):
     return hand_value[hand_type(hand)]
 
-
-def get_dealer_hand_value(hand:list[data.Card]):
-    return hand_value[hand_type(hand)]
-
-
 # Compares the hand values of the dealer and the player and determines who wins the round.
 # Input = Two lists of Cards, Output = string
 # Created by Jeremy, modified by Ruben
 def win_or_lose(player:list[data.Card],dealer:list[data.Card]):
     your_hand_value = get_hand_value(player)
-    dealer_hand_value = get_dealer_hand_value(dealer)
+    dealer_hand_value = get_hand_value(dealer)
 
     if dealer_hand_value > your_hand_value:
         return "You Lose"
@@ -128,6 +123,11 @@ def betting(total:int, bet:int):
     elif bet == total:
         print("Betting all in with:", bet, "chips")
         return bet
+
+    elif bet < 0:
+        print("You cannot bet negative chips, setting bet to 0")
+        return 0
+
     else:
         print("Betting:", bet, "chips")
         return bet
@@ -146,7 +146,14 @@ def play_game(chips:int) -> int:
     print("Your Hand is :", sort_ranks(player))
 
     dealer = shuffled_deck[5:10]
-    bet = betting(chips, int(input("How Many Chips Would You Like To Bet?: ")))
+    try:
+        bet = betting(chips, int(input("How Many Chips Would You Like To Bet?: ")))
+
+    except ValueError:
+        print("Please only input a number for your bet.")
+        print("Setting bet as 0 chips.")
+        bet = 0
+
     print("-----------------------------------------------------------")
     print(your_hand(player))
     print(dealer_hand(dealer))
@@ -206,7 +213,7 @@ def game_start():
 
     print("You Have Lost All Your Chips.")
     print("Thanks For Playing! Your High Score Was:", high_score)
-    print("High Score Poker v0.3")
+    print("High Score Poker v0.5")
     print("Developed by Jeremy Lopanec, and Ruben Moulton Huber")
 
 
