@@ -1,6 +1,6 @@
 from operator import truediv
 from sys import exc_info
-
+import os
 import data
 from data import Card
 from data import deck
@@ -117,8 +117,10 @@ def win_or_lose(player:list[data.Card],dealer:list[data.Card]):
 # Input = two ints, output = int
 # Created by Ruben
 def betting(total:int, bet:int):
+    print("-----------------------------------------------------------")
+    os.system('cls')
     if bet > total:
-        print("You cannot bet more chips than you have.")
+        print("You cannot bet more chips than you have. Setting bet to 0")
         return 0
     elif bet == total:
         print("Betting all in with:", bet, "chips")
@@ -150,11 +152,12 @@ def play_game(chips:int) -> int:
         bet = betting(chips, int(input("How Many Chips Would You Like To Bet?: ")))
 
     except ValueError:
-        print("Please only input a number for your bet.")
-        print("Setting bet as 0 chips.")
+        print("Please only input a number for your bet")
+        print("Setting bet as 0 chips")
         bet = 0
 
-    print("-----------------------------------------------------------")
+
+
     print(your_hand(player))
     print(dealer_hand(dealer))
     win_or_lose(player,dealer)
@@ -162,6 +165,7 @@ def play_game(chips:int) -> int:
 
     if win_or_lose(player,dealer) == "True Tie":
         winnings = 0
+        print("True Tie")
         print("Returning Bet")
     elif win_or_lose(player,dealer) == "You Win":
         winnings = winnings + bet
@@ -211,7 +215,7 @@ def game_start():
 
 
 
-    print("You Have Lost All Your Chips.")
+    print("You Have Lost All Your Chips")
     print("Thanks For Playing! Your High Score Was:", high_score)
     print("High Score Poker v0.5")
     print("Developed by Jeremy Lopanec, and Ruben Moulton Huber")
